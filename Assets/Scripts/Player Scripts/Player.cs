@@ -11,6 +11,12 @@ public class Player : MonoBehaviour {
 
 	public int currentAmmo = 30;
 
+    private float timer = 2.5f;
+    private float time = 0;
+
+    public GameObject loseText;
+    private bool lose;
+
 	// Use this for initialization
 	void Start () {
         healthSlider.value = health;
@@ -18,7 +24,16 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//print (currentAmmo);
+        //print (currentAmmo);
+
+        if (lose)
+        {
+            time += Time.deltaTime;
+            if (time > timer)
+            {
+                SceneManager.LoadScene("fps base");
+            }
+        }
 	}
 
     void takeDamage(float dmg) {
@@ -27,7 +42,8 @@ public class Player : MonoBehaviour {
 
         if (health <= 0)
         {
-            SceneManager.LoadScene("fps base");
+            lose = true;
+            loseText.SetActive(true);
         }
     }
 }
