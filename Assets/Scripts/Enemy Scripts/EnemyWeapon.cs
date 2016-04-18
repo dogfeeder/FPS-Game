@@ -28,6 +28,7 @@ public class EnemyWeapon : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		myTransform = this.transform;
+        enemyPlayer = GameObject.Find("Player");
 	}
 	
 	// Update is called once per frame

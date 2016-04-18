@@ -6,7 +6,7 @@ public class AK74u : MonoBehaviour {
 	private Transform myTransform;
 	
 	//Player reference
-	Player player;
+	public Player player;
 
 	//Weapon Variables
 	private bool fireReady = true;
@@ -32,8 +32,6 @@ public class AK74u : MonoBehaviour {
 	void Start () {
 		
 		myTransform = this.transform;
-
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 	}
 	
 	// Update is called once per frame

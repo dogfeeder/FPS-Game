@@ -4,13 +4,13 @@ using System.Collections;
 public class IngameGUI : MonoBehaviour {
 
 	//GameManager gameManager;
-	Player player;
+	public Player player;
 	
 	public GUIStyle guiStyle;
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+		//player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 		Cursor.visible = false; 
 	}
 	
